@@ -1,0 +1,9 @@
+<ul>
+	{% for social_network in social_networks %}
+	<li>
+		<a href="{{ social_network.link }}" title="{{ social_network.name }}">
+			<img src="{{ social_network.logo.url }}" alt="{{ social_network.name }}">
+		</a>
+	</li>
+	{% endfor %}
+</ul>

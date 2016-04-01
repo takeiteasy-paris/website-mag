@@ -1,0 +1,13 @@
+{% load staticfiles %}
+{% load tags %}
+
+<img src="{% static 'icon/logo.svg' %}" alt="takeiteasy_logo">
+
+{% show_social_networks %}
+
+<ul>
+	<li><a href="{% url 'mag:legal_notices' %}">> Mentions Légales</a></li>
+	<li><a href="{% url 'mag:team' %}">> L'Équipe</a></li>
+</ul>
+
+<p>Copyright 2016, Take It Easy.</p>

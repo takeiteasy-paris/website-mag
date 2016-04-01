@@ -1,0 +1,15 @@
+{% extends 'mag/base.html' %}
+
+{% block title %}Vu sur le Web - {{ block.super }}{% endblock title %}
+
+{% block content %}
+	{% for seen in seen_list %}
+		<div class="seen">
+			<div class="date">
+				{{ seen.published_date|date:'d/m/Y' }}
+			</div>
+			<h1><a href="{% url 'mag:seen_on_the_web_detail' pk=seen.pk %}">{{ seen.title }}</a></h1>
+			<p>{{ seen.text|linebreaks }}</p>
+		</div>
+	{% endfor %}
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'mag/base.html' %}
+
+{% block title %}Fact & Curious - {{ block.super }}{% endblock title %}
+
+{% block content %}
+	{% for fact in fact_list %}
+		<div class="fact">
+			<div class="date">
+				{{ fact.published_date|date:'d/m/Y' }}
+			</div>
+			<h1><a href="{% url 'mag:fact_and_curious_detail' pk=fact.pk %}">{{ fact.title }}</a></h1>
+			<p>{{ fact.text|linebreaks }}</p>
+		</div>
+	{% endfor %}
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% load staticfiles %}
+{% load tags %}
+
+<img src="{% static 'icon/logo.svg' %}" alt="takeiteasy_logo">
+
+{% show_social_networks %}
+
+<div class="menu">
+	<ul>
+		<li class="{% if active_tab == 'index' %}active{% endif %}"><a href="{% url 'mag:index' %}">Accueil</a></li>
+	    <li class="{% if active_tab == 'articles' %}active{% endif %}"><a href="{% url 'mag:articles' %}">Articles</a></li>
+	    <li class="{% if active_tab == 'fact_and_curious' %}active{% endif %}"><a href="{% url 'mag:fact_and_curious' %}">Fact & Curious</a></li>
+	    <li class="{% if active_tab == 'seen_on_the_web' %}active{% endif %}"><a href="{% url 'mag:seen_on_the_web' %}">Vu sur le Web</a></li>
+	</ul>
+</div>

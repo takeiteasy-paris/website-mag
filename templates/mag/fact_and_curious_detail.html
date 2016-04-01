@@ -1,0 +1,13 @@
+{% extends 'mag/base.html' %}
+
+{% block title %}{{ fact.title }} - {{ block.super }}{% endblock title %}
+
+{% block content %}
+    <div class="fact">
+        <div class="date">
+            {{ fact.published_date|date:'d/m/Y' }}
+        </div>
+        <h1>{{ fact.title }}</h1>
+        <p>{{ fact.text|linebreaks }}</p>
+    </div>
+{% endblock content %}

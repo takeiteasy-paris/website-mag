@@ -1,0 +1,13 @@
+{% extends 'mag/base.html' %}
+
+{% block title %}{{ article.title }} - {{ block.super }}{% endblock title %}
+
+{% block content %}
+    <div class="article">
+        <div class="date">
+            {{ article.published_date|date:'d/m/Y' }}
+        </div>
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.text|linebreaks }}</p>
+    </div>
+{% endblock content %}
